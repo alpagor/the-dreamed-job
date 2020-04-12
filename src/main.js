@@ -27,7 +27,7 @@ function createSplashScreen () {
       <ul>
       <li><button class ="right-btn">&#x25B6</button> = move player to the right</li>
       <li><button class ="right-btn">&#x25C0</button> = move player to the left</li>
-      //añadir stop?
+      <li><button class ="right-btn">space bar</button> = player stops</li>
       </ul>
       </section>
     </main>
@@ -65,11 +65,11 @@ function removeScreen () {
 }
 
 // game over screen
-function createGameOverScreen (score) {
+function createGameOverScreen () {
   gameOverScreen = buildDom(`
   <main>
     <h1>Game over</h1>
-    <p>Your score: <span> ${score} </span></p>
+    <p>Sorry, we have selected the candidate whom we believe most closely matches the job requirements of the position.<br>We do appreciate you taking the time to interview with us and encourage you to apply for other openings at the company in the future.</p> 
     <button>Restart</button>
   </main>
   `)
@@ -78,6 +78,22 @@ function createGameOverScreen (score) {
   restartButton.addEventListener('click', startGame)
 
   document.body.appendChild(gameOverScreen)
+}
+
+// game win screen
+function createGameWinScreen () {
+  gameWinScreen = buildDom(`
+  <main class="transition-screen">
+  <h1><img src="./img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
+
+    <button>Restart</button>
+  </main>
+  `)
+
+  var restartButton = gameWinScreen.querySelector('button')
+  restartButton.addEventListener('click', startGame)
+
+  document.body.appendChild(gameWinScreen)
 }
 
 // start the game , end the game
@@ -92,9 +108,17 @@ function startGame () {
   game.start()
 }
 
-function endGame (score) {
+function endGame () {
   removeScreen()
-  createGameOverScreen(score)
+  // createGameOverScreen()
+
+  if (game.gameIsWon) {
+    console.log('YOU ARE A WINNER')
+    createGameWinScreen()
+  } else {
+    console.log('YOU ARE A LOOSER')
+    createGameOverScreen()
+  }
 }
 
 // Run the function   `createSplashScreen` once all the resources are loaded

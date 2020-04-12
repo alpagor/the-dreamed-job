@@ -6,7 +6,7 @@ class Player {
 
     this.lives = lives
 
-    this.size = 100 // cuando tengo la img de mi payer actualizaré este dato
+    this.size = 90 // cuando tengo la img de mi payer actualizaré este dato
     this.x = 1
     this.y = canvas.height - this.size
     this.direction = 0 //  0 not moving  // -1 moving up   // 1 moving down
@@ -61,31 +61,59 @@ class Player {
 
     this.ctx.fillRect(this.x, this.y, this.size, this.size)
   }
-/*
-  didCollide (enemy) {
+
+  didCollideHr (hr) {
     // true or false if player hit an enemy
     const playerLeft = this.x
     const playerRight = this.x + this.size
     const playerTop = this.y
     const playerBottom = this.y + this.size
 
-    const enemyLeft = enemy.x
-    const enemyRight = enemy.x + enemy.size
-    const enemyTop = enemy.y
-    const enemyBottom = enemy.y + enemy.size
+    const hrLeft = hr.x
+    const hrRight = hr.x + hr.size
+    const hrTop = hr.y
+    const hrBottom = hr.y + hr.size
 
-    const crossLeft = enemyLeft <= playerRight && enemyLeft >= playerLeft
+    const crossRight = hrLeft <= playerRight && hrLeft >= playerLeft
 
-    const crossRight = enemyRight >= playerLeft && enemyRight <= playerRight
+    const crossLeft = hrRight >= playerLeft && hrRight <= playerRight
 
-    const crossTop = enemyTop <= playerBottom && enemyTop >= playerTop
+    const crossTop = hrBottom >= playerTop && hrBottom >= playerBottom
 
-    const crossBottom = enemyBottom >= playerTop && enemyBottom <= playerBottom
+    const crossBottom = hrTop <= playerBottom && hrTop >= playerTop
 
     if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
       return true
     } else {
-      false
+      return false
     }
-  } */
+  }
+
+  // porqué tengo que crear 2 didCollide functions? si quito 1 me da error...
+  didCollideProjectM (projectm) {
+    // true or false if player hit an enemy
+    const playerLeft = this.x
+    const playerRight = this.x + this.size
+    const playerTop = this.y
+    const playerBottom = this.y + this.size
+
+    const projectmLeft = projectm.x
+    const projectmRight = projectm.x + projectm.size
+    const projectmTop = projectm.y
+    const projectmBottom = projectm.y + projectm.size
+
+    const crossRight = projectmLeft <= playerRight && projectmLeft >= playerLeft
+
+    const crossLeft = projectmRight >= playerLeft && projectmRight <= playerRight
+
+    const crossTop = projectmBottom >= playerTop && projectmBottom <= playerBottom
+
+    const crossBottom = projectmTop <= playerBottom && projectmTop >= playerTop
+
+    if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+      return true
+    } else {
+      return false
+    }
+  }
 }

@@ -6,11 +6,12 @@ class Game {
     this.hrTeam = []
     this.projectM = [] // hay que verificar este valor, sino poner 1
     this.gameIsOver = false
-    // this.gameIsWon = false
+    this.gameIsWon = false
     this.gameScreen = null
     this.canvas = null
     this.ctx = null
     // crear propiedades de img y audio del juego, como poner audio?
+    // aquí va la propiedad de preguntas del projectM?
   }
 
   // instantiate the player, set the canvas ,and start the canvas loop
@@ -21,7 +22,7 @@ class Game {
     this.ctx = this.canvas.getContext('2d')
 
     // Save the reference to lives and score elements
-    this.livesElement = this.gameScreen.querySelector('.lives.value')
+    this.livesElement = this.gameScreen.querySelector('.lives .value')
 
     // Set the canvas dimenisons
     this.containerWidth = canvasContainer.clientWidth
@@ -30,7 +31,7 @@ class Game {
     this.canvas.width = this.containerWidth
     this.canvas.height = this.containerHeight
 
-    this.player = new Player(this.canvas, 4)
+    this.player = new Player(this.canvas, 500)
 
     // Event listener for moving the player
     function handleKeyDown (event) {
@@ -41,11 +42,9 @@ class Game {
       } else if (event.key === 'ArrowRight') {
         console.log('RIGHT')
         this.player.setDirection('right')
+      } else if (event.keyCode === 32) {
+        this.player.direction = 0
       }
-      // añadir que se pueda parar? En caso
-      // else if (event.keyCode == 32) {
-      // this.player.direction = 0;
-    // };
     }
 
     const boundHandleKeyDown = handleKeyDown.bind(this) // tenemos que hacer bind porqué sino cogeremos
@@ -130,34 +129,65 @@ class Game {
     // array method callbacks loose the value of `this`
     // remedy is `thisArg` or using arrow function as a callback
     // this.enemies.forEach( (enemy) => {
-    /*
-    this.enemies.forEach(function (enemy) {
-      if (this.player.didCollide(enemy)) {
+    // checkCollisions with hrTeam enemy
+
+    this.hrTeam.forEach(function (hr) {
+      if (this.player.didCollideHr(hr)) {
         this.player.removeLife()
         console.log('Player lives', this.player.lives)
 
-        // Move the enemy of the screen, to the left
-        enemy.x = -1 * enemy.size
+        // Move the enemy of the screen, to the bottom
+        hr.y = -1 * hr.size
 
         if (this.player.lives <= 0) {
           this.gameOver()
         }
       }
     }, this) // <== thisArg
-    */
+
+    // check collision with projectM "enemy"
+    this.projectM.forEach(function (projectm) {
+      if (this.player.didCollideProjectM(projectm)) {
+        // this.player.removeLife()
+        // console.log('Player lives', this.player.lives)
+        this.questionPrompt()
+        // Move the enemy of the screen, to the bottom
+        projectm.y = -1 * projectm.size
+
+        if (this.player.lives <= 0) {
+          this.gameOver()
+        }
+      }
+    }, this) // <== thisArg
   }
 
-  /*
+  // gameOver
+
   gameOver () {
     this.gameIsOver = true
-    endGame(this.score)
+    endGame()
   }
-*/
+
+  // gameWin
+
+  gameWin () {
+    this.gameIsWon = true
+    endGame()
+  }
+
+  // prueba crear función para el prompt
+
+  questionPrompt () {
+    const question = prompt('What does HTML stand for?(a) Hyper type marked language (b) Hyper text markup language (c) Hyped terrain mock language (d) Hyper typeface main loop')
+    if (question.toLowerCase() === 'b') {
+      console.log('you got the job!')
+      this.gameWin()
+    } else {
+      this.gameOver()
+    }
+  }
+
   updateGameStats () {
-    /*
-    this.score++
     this.livesElement.innerHTML = this.player.lives
-    this.scoreElement.innerHTML = this.score
-    */
   }
 }
