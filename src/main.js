@@ -95,16 +95,27 @@ function removeGameOverScreen () {
 function createGameWinScreen () {
   gameWinScreen = buildDom(`
   <main class="transition-screen">
-  <h1><img src="./img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
-
-    <button>Restart</button>
+    <h1><img src="./img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
+    <div class ="btn-return2-container">
+    <button class="restartbtn2">Restart</button>
+    <button class="homebtn2">Home</button>
+    </div>
   </main>
   `)
 
-  var restartButton = gameWinScreen.querySelector('button')
+  var restartButton = gameWinScreen.querySelector('.restartbtn2')
   restartButton.addEventListener('click', startGame)
 
+  var homeButton = gameWinScreen.querySelector('.homebtn2')
+  homeButton.addEventListener('click', backSplash2)
+
   document.body.appendChild(gameWinScreen)
+}
+
+function removeGameWinScreen () {
+  if (gameWinScreen) {
+    gameWinScreen.remove()
+  }
 }
 
 // start the game , end the game
@@ -134,6 +145,11 @@ function endGame () {
 
 function backSplash () {
   removeGameOverScreen()
+  createSplashScreen()
+}
+
+function backSplash2 () {
+  removeGameWinScreen()
   createSplashScreen()
 }
 

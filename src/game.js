@@ -78,17 +78,18 @@ class Game {
       // 1. UPDATE THE STATE OF PLAYER AND ENEMIES
       // 1.1 Create new enemies randomly (both HR and ProjectM)
       if (Math.random() > 0.98) {
-        const randomHeightPos = this.canvas.height * Math.random()
-        const newHrTeam = new HRteam(this.canvas, randomHeightPos, 7)
+        const randomWidthPos = (this.canvas.width - 20) * Math.random()
+        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 7)
 
         this.hrTeam.push(newHrTeam)
         console.log(newHrTeam)
       } ;
       if (Math.random() > 0.99) {
-        const randomHeightPos = this.canvas.height * Math.random()
-        const newProjectM = new ProjectM(this.canvas, randomHeightPos, 2)
+        const randomWidthPos = (this.canvas.width - 20) * Math.random()
+        const newProjectM = new ProjectM(this.canvas, randomWidthPos, 2)
 
         if (this.projectM.length < 1) {
+          console.log(randomWidthPos)
           this.projectM.push(newProjectM) // en caso sea 1 no push cuando salga de la pantalla lo vuelve a poner
         }
 
@@ -96,7 +97,7 @@ class Game {
       }
 
       // 1.2. Check if player had hit any enemy
-      this.checkCollisons(Math.random() > 0.98)
+      this.checkCollisons()
 
       // 1.3. Update the player positon
       this.player.handleScreenCollision()
@@ -210,6 +211,10 @@ class Game {
       if (theAnswer === theInput.toLowerCase()) {
         if (this.nextIndex !== this.questions.length - 1) {
           this.nextIndex += 1
+          this.projectM.pop()
+          this.hrTeam.length = 0
+          this.startLoop()
+          // this.startLoop()las 3 preguntas al mismo pm
         } else if (this.nextIndex === this.questions.length - 1) {
           console.log('you got the job!')
           return this.gameWin()
