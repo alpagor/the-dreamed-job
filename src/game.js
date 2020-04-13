@@ -211,9 +211,9 @@ class Game {
       if (theAnswer === theInput.toLowerCase()) {
         if (this.nextIndex !== this.questions.length - 1) {
           this.nextIndex += 1
-          this.projectM.pop()
+          this.projectM.pop() // limpiamos el array porqué despues del prompt el projectM aparece en el mismo lugar
           this.hrTeam.length = 0
-          this.startLoop()
+          // this.startLoop() si lo dejo en cada iteración me aumenta la velocidad...como si guardar en cache la misma y le sumara la nueva
           // this.startLoop()las 3 preguntas al mismo pm si no limpiamos los arrays
         } else if (this.nextIndex === this.questions.length - 1) {
           console.log('you got the job!')
