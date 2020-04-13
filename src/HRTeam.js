@@ -26,11 +26,11 @@ class HRteam {
 
   isInsideScreen () {
     const hrTop = this.y + this.size
-    return hrTop > 0
+    return hrTop < this.canvas.height
   }
 
   isOutsideScreen () {
     const hrTop = this.y + this.size
-    return hrTop < 0
+    return hrTop > 0
   }
 }

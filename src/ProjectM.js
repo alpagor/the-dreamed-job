@@ -26,11 +26,12 @@ class ProjectM {
 
   isInsideScreen () {
     const projectTop = this.y + this.size
-    return projectTop > 0
+
+    return projectTop < this.canvas.height
   }
 
   isOutsideScreen () {
     const projectTop = this.y + this.size
-    return projectTop < 0
+    return projectTop > 0
   }
 }

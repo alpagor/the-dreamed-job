@@ -70,16 +70,27 @@ function createGameOverScreen () {
   <main>
     <h1>Game over</h1>
     <p>Sorry, we have selected the candidate whom we believe most closely matches the job requirements of the position.<br>We do appreciate you taking the time to interview with us and encourage you to apply for other openings at the company in the future.</p> 
-    <button>Restart</button>
+    <div class ="btn-return-container">
+    <button class="restartbtn">Restart</button>
+    <button class="homebtn">Home</button>
+    </div>
   </main>
   `)
 
-  var restartButton = gameOverScreen.querySelector('button')
+  var restartButton = gameOverScreen.querySelector('.restartbtn')
   restartButton.addEventListener('click', startGame)
+
+  var homeButton = gameOverScreen.querySelector('.homebtn')
+  homeButton.addEventListener('click', backSplash)
 
   document.body.appendChild(gameOverScreen)
 }
 
+function removeGameOverScreen () {
+  if (gameOverScreen) {
+    gameOverScreen.remove()
+  }
+}
 // game win screen
 function createGameWinScreen () {
   gameWinScreen = buildDom(`
@@ -119,6 +130,11 @@ function endGame () {
     console.log('YOU ARE A LOOSER')
     createGameOverScreen()
   }
+}
+
+function backSplash () {
+  removeGameOverScreen()
+  createSplashScreen()
 }
 
 // Run the function   `createSplashScreen` once all the resources are loaded

@@ -4,14 +4,9 @@
 
 Land your dreamed job can be be a tough experience expecially when the HR guys and girls prevent you to meet the only person that will make you the questions that matters. "the dreamed job" is a survival game in which the player will have to avoid the HR team and meet the Project Manger with at least 1 cv.
 
----
-
 ## MVP (DOM - CANVAS)
 
-The player that can move in 2 directions (left and right) via key related events.
-HR teams members and the Project Manager will move vertically and randomly (no related key actions). The Project Manager will fall every x time. Every time a HR team member will collide with the Player this one will loose a cv (he will have 4 in total). When the Project Manager and the player collide a prompt with a question will appear. If the answer at the question is correct, the player will win the game. If not, he'll loose automatically.
-
----
+The player that can move in 2 directions (left and right) via key related events. HR teams members and the Project Manager will move vertically and randomly (no related key actions). The Project Manager will fall every x time. Every time a HR team member will collide with the Player this one will loose a cv (he will have 4 in total). When the Project Manager and the player collide a prompt with a question will appear. If the answer at the question is correct, the player will win the game. If not, he'll loose automatically.
 
 ## Tasks
 
@@ -46,6 +41,7 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 3. game.js
 4. player.js
 5. obstacle.js
+6. bonus.js
 
 ### 1. index.html file
 
@@ -95,8 +91,6 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 
 - canvas
 - ctx
-- size
-- speed
 - x position
 - y position
 - width
@@ -104,10 +98,6 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 - lives
 - image
 - direction
-- playerLeft
-- playerRight
-- screenLeft
-- screenRight
 
 **Methods**
 
@@ -115,15 +105,7 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 
 - move
 
-- setDirection
-
-- handleScreenCollision
-
-- updatePosition
-
-- collidedWithHRTeam
-
-- collidedWithProjectM
+- collidedWithObstacle
 
 - collidedWithScreen
 
@@ -139,6 +121,7 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 - y position
 - width
 - height
+- row
 - speed
 - direction
 - image
@@ -153,7 +136,6 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 - Bonus cv (extra life if collide a randomly ironhacker)
 - Username registration and scoreboard (to compete again other players)
 - Pause game
-- Pause Player
 - Sounds and visual effects (when collides, looses or wins)
 
 ## States and States Transitions
@@ -184,4 +166,4 @@ HR teams members and the Project Manager will move vertically and randomly (no r
 
 ### Trello
 
-shorturl.at/belK3
+https://bit.ly/2xeOM5D
