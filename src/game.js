@@ -214,7 +214,7 @@ class Game {
           this.projectM.pop()
           this.hrTeam.length = 0
           this.startLoop()
-          // this.startLoop()las 3 preguntas al mismo pm
+          // this.startLoop()las 3 preguntas al mismo pm si no limpiamos los arrays
         } else if (this.nextIndex === this.questions.length - 1) {
           console.log('you got the job!')
           return this.gameWin()
