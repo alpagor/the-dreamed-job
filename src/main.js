@@ -18,16 +18,16 @@ function buildDom (htmlString) {
 function createSplashScreen () {
   splashScreen = buildDom(`
     <main class="main-start">
-      <h1>The Dreamed job</h1>
-      <img src="" alt="cover image">
-      <button>Start Game</button>
-      <section class = "instructions">
+      <h1>THE DREAMED JOB</h1>
+      <img id="splashimg" src="./../img/programming-office.jpg" alt="cover image">
+      <button class= "start-btn">START GAME</button>
       <p>INSTRUCTIONS</p>
-      <ul>
-      <li><button class ="right-btn">&#x25B6</button> = move player to the right</li>
-      <li><button class ="right-btn">&#x25C0</button> = move player to the left</li>
-      <li><button class ="right-btn">space bar</button> = player stops</li>
-      </ul>
+      <section class = "instructions">
+        <ul>
+        <li><button class ="btn right">&#x25B6</button> = MOVE PLAYER TO THE RIGHT</li>
+        <li><button class ="btn left">&#x25C0</button> = MOVE PLAYER TO THE LEFT</li>
+        <li><button class ="btn space-bar">space bar</button> = PLAYER STOPS</li>
+        </ul>
       </section>
     </main>
  `)
@@ -46,7 +46,7 @@ function createGameScreen () {
     <main class="game container">
     <header>
       <div class="lives">
-        <span class="label">CV's:</span>
+        <span class="label">CV'S:</span>
         <span class="value"></span>
       </div>
     </header>
@@ -67,11 +67,11 @@ function removeScreen () {
 function createGameOverScreen () {
   gameOverScreen = buildDom(`
   <main>
-    <h1>Game over</h1>
-    <p>Sorry, we have selected the candidate whom we believe most closely matches the job requirements of the position.<br>We do appreciate you taking the time to interview with us and encourage you to apply for other openings at the company in the future.</p> 
+    <h1>GAME OVER!</h1>
+    <p>SORRY, WE HAVE SELECTED THE CANDIDATE WHOM WE BELIEVE MOST CLOSELY MATCHES THE JOB REQUIREMENTS OF THE POSITION.<br>WE SHOULD APRECIATE YOU TAKING THE TIME TO INTERVIEW WITH US AND ENCOURAGE YOU TO APPLY FOR OTHER OPENINGS AT THE COMPANY IN THE FUTURE…BUT HONESTLY…WITH THIS KNOWLEDGE YOU WOULD LIKE TO MAKE A CHANGE IN YOUR CAREER PLAN….</p> 
     <div class ="btn-return-container">
-    <button class="restartbtn">Restart</button>
-    <button class="homebtn">Home</button>
+    <button class="restartbtn">RESTART</button>
+    <button class="homebtn">HOME</button>
     </div>
   </main>
   `)
@@ -96,8 +96,8 @@ function createGameWinScreen () {
   <main class="transition-screen">
     <h1><img src="./img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
     <div class ="btn-return2-container">
-    <button class="restartbtn2">Restart</button>
-    <button class="homebtn2">Home</button>
+    <button class="restartbtn2">RESTART</button>
+    <button class="homebtn2">HOME</button>
     </div>
   </main>
   `)
