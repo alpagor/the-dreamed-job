@@ -79,7 +79,7 @@ class Game {
       // 1.1 Create new enemies randomly (both HR and ProjectM)
       if (Math.random() > 0.98) {
         const randomWidthPos = (this.canvas.width - 20) * Math.random()
-        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 7)
+        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 6)
 
         this.hrTeam.push(newHrTeam)
         console.log(newHrTeam)
@@ -156,7 +156,7 @@ class Game {
     // checkCollisions with hrTeam enemy
 
     this.hrTeam.forEach(function (hr) {
-      if (this.player.didCollideHr(hr)) {
+      if (this.player.didCollide(hr)) {
         this.player.removeLife()
         console.log('Player lives', this.player.lives)
 
@@ -171,7 +171,7 @@ class Game {
 
     // check collision with projectM "enemy"
     this.projectM.forEach(function (projectm) {
-      if (this.player.didCollideProjectM(projectm)) {
+      if (this.player.didCollide(projectm)) {
         // this.player.removeLife()
         // console.log('Player lives', this.player.lives)
         this.questionPrompt()

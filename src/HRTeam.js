@@ -5,18 +5,18 @@ class HRteam {
     this.canvas = canvas
     this.ctx = this.canvas.getContext('2d')
 
-    this.size = 20 // actualizar con las medidas de mi HR enemies
+    this.size = 80 // actualizar con las medidas de mi HR enemies
     this.y = 0 // this.canvas.height + this.size
     this.x = x
     this.speed = speed
-    // añadir img de HRteam this.imageHR = new Image ();
+    this.imageHR = new Image()
+    this.imageHR.src = '../img/hr-guy.png'
   }
 
   draw () {
-    // aquí va la img del HRteam
-    this.ctx.fillStyle = 'blue' // quitar esto luego y substituir con la img del HR
-    this.ctx.fillRect(this.x, this.y, this.size, this.size)
-    // Modificar esto quitado el fillRecct = this.ctx.drawImage(this.imageHR, this.x, this.y, this.size, this.size);
+    // this.ctx.fillStyle = 'blue' // quitar esto luego y substituir con la img del HR
+    // this.ctx.fillRect(this.x, this.y, this.size, this.size)
+    this.ctx.drawImage(this.imageHR, this.x, this.y, this.size, 80)
   }
 
   updatePosition () {

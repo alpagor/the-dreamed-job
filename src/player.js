@@ -6,9 +6,9 @@ class Player {
 
     this.lives = lives
 
-    this.size = 90 // cuando tengo la img de mi payer actualizaré este dato
+    this.size = 100 // cuando tengo la img de mi payer actualizaré este dato
     this.x = 1
-    this.y = canvas.height - this.size
+    this.y = canvas.height - 110
     this.direction = 0 //  0 not moving  // -1 moving up   // 1 moving down
     this.speed = 5
 
@@ -18,7 +18,13 @@ class Player {
     this.screenLeft = 0 // x = 0
     this.screenRight = this.canvas.width // - this.size
 
-    // imagen del player
+    this.imagePlayer = new Image()
+    this.imagePlayer.src = '../img/player.png'
+    this.imagePlayerR = new Image()
+    this.imagePlayerR.src = '../img/player-right.png'
+    this.imagePlayerL = new Image()
+    this.imagePlayerL.src = '../img/player-left-2.png'
+    this.imageFront = this.imagePlayer
   }
 
   setDirection (direction) {
@@ -56,12 +62,29 @@ class Player {
   }
 
   draw () {
-    this.ctx.fillStyle = 'magenta'
+    // this.ctx.fillStyle = 'magenta'
     // ctx.fillRect(x, y, width, height)
+    // this.ctx.fillRect(this.x, this.y, this.size, this.size)
 
-    this.ctx.fillRect(this.x, this.y, this.size, this.size)
+    switch (this.direction) {
+      case 'right':
+        this.imagePlayer = this.imagePlayerR
+        // console.log('IM HEADING EAST');
+        this.ctx.drawImage(this.imagePlayer, this.x, this.y, this.size, 115)
+        break
+      case 'left':
+        this.imagePlayer = this.imagePlayerL
+        // console.log('IM HEADING WEST');
+        this.ctx.drawImage(this.imagePlayer, this.x, this.y, this.size, 115)
+        break
+      default:
+        this.imageFront = this.imagePlayer
+        this.ctx.drawImage(this.imagePlayer, this.x, this.y, this.size, 115)
+        break
+    }
   }
 
+  /*
   didCollideHr (hr) {
     // true or false if player hit an enemy
     const playerLeft = this.x
@@ -82,35 +105,38 @@ class Player {
 
     const crossBottom = hrTop <= playerBottom && hrTop >= playerTop
 
-    if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+    const inside = (playerLeft >= hrLeft && playerLeft <= hrRight) && (playerRight >= hrLeft && playerRight <= hrRight)
+    if ((crossLeft || crossRight || inside) && (crossTop || crossBottom)) {
       return true
     } else {
       return false
     }
   }
-
+*/
   // porqué tengo que crear 2 didCollide functions? si quito 1 me da error...
-  didCollideProjectM (projectm) {
+  didCollide (obj) {
     // true or false if player hit an enemy
     const playerLeft = this.x
     const playerRight = this.x + this.size
     const playerTop = this.y
     const playerBottom = this.y + this.size
 
-    const projectmLeft = projectm.x
-    const projectmRight = projectm.x + projectm.size
-    const projectmTop = projectm.y
-    const projectmBottom = projectm.y + projectm.size
+    const objLeft = obj.x
+    const objRight = obj.x + obj.size
+    const objTop = obj.y
+    const objBottom = obj.y + obj.size
 
-    const crossRight = projectmLeft <= playerRight && projectmLeft >= playerLeft
+    const crossRight = objLeft <= playerRight && objLeft >= playerLeft
 
-    const crossLeft = projectmRight >= playerLeft && projectmRight <= playerRight
+    const crossLeft = objRight >= playerLeft && objRight <= playerRight
 
-    const crossTop = projectmBottom >= playerTop && projectmBottom <= playerBottom
+    const crossTop = objBottom >= playerTop && objBottom <= playerBottom
 
-    const crossBottom = projectmTop <= playerBottom && projectmTop >= playerTop
+    const crossBottom = objTop <= playerBottom && objTop >= playerTop
 
-    if ((crossLeft || crossRight) && (crossTop || crossBottom)) {
+    const inside = (playerLeft >= objLeft && playerLeft <= objRight) && (playerRight >= objLeft && playerRight <= objRight)
+
+    if ((crossLeft || crossRight || inside) && (crossTop || crossBottom)) {
       return true
     } else {
       return false
