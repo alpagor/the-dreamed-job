@@ -40,7 +40,7 @@ body {
 }
 
 .canvas-container {
-  background-image: url("img/Lego_office.jpg");
+  background-image: url("../img/Lego_office.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 60% 50%;
@@ -112,7 +112,7 @@ li {
 
 .game.container {
   flex: 1;
-  background-image: url("img/office-figurines.jpg");
+  background-image: url("../img/office-figurines.jpg");
   background-size: cover;
   background-position: 60% 50%;
   width: 100vw;
