@@ -19,7 +19,7 @@ function createSplashScreen () {
   splashScreen = buildDom(`
     <main class="main-start">
       <h1>THE DREAMED JOB</h1>
-      <img id="splashimg" src="./../img/programming-office.jpg" alt="cover image">
+      <img id="splashimg" src="img/programming-office.jpg" alt="cover image">
       <button class= "start-btn">START GAME</button>
       <p>INSTRUCTIONS</p>
       <section class = "instructions">
