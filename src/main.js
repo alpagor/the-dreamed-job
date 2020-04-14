@@ -94,7 +94,7 @@ function removeGameOverScreen () {
 function createGameWinScreen () {
   gameWinScreen = buildDom(`
   <main class="transition-screen">
-    <h1><img src="./img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
+    <h1><img src="img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
     <div class ="btn-return2-container">
     <button class="restartbtn2">RESTART</button>
     <button class="homebtn2">HOME</button>
