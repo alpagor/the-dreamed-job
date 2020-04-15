@@ -66,12 +66,17 @@ function removeScreen () {
 // game over screen
 function createGameOverScreen () {
   gameOverScreen = buildDom(`
-  <main>
+  <main class="game-over-screen">
     <h1>GAME OVER!</h1>
-    <p>SORRY, WE HAVE SELECTED THE CANDIDATE WHOM WE BELIEVE MOST CLOSELY MATCHES THE JOB REQUIREMENTS OF THE POSITION.<br>WE SHOULD APRECIATE YOU TAKING THE TIME TO INTERVIEW WITH US AND ENCOURAGE YOU TO APPLY FOR OTHER OPENINGS AT THE COMPANY IN THE FUTURE…BUT HONESTLY…WITH THIS KNOWLEDGE YOU WOULD LIKE TO MAKE A CHANGE IN YOUR CAREER PLAN….</p> 
+    <div class="img-game-over">
+      <div class="text-gameOver">
+        <p id="game-over-text">HONESTLY…<br>WITH THIS KNOWLEDGE YOU<br>WOULD LIKE TO MAKE <br>A CHANGE IN YOUR CAREER PLAN…</p> 
+      </div>
+      <img id="game-over-character" src="img/Lego_web_Dev2.jpg" alt="game over it recruiter image">
+    </div>
     <div class ="btn-return-container">
-    <button class="restartbtn">RESTART</button>
-    <button class="homebtn">HOME</button>
+      <button class="restartbtn">RESTART</button>
+      <button class="homebtn">HOME</button>
     </div>
   </main>
   `)

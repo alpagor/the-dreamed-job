@@ -67,21 +67,19 @@ class Player {
     // this.ctx.fillRect(this.x, this.y, this.size, this.size)
 
     switch (this.direction) {
-      case 'right':
-        this.imagePlayer = this.imagePlayerR
+      case 1:
+        this.imageFront = this.imagePlayerR
         // console.log('IM HEADING EAST');
-        this.ctx.drawImage(this.imagePlayer, this.x, this.y, this.size, 115)
         break
-      case 'left':
-        this.imagePlayer = this.imagePlayerL
+      case -1:
+        this.imageFront = this.imagePlayerL
         // console.log('IM HEADING WEST');
-        this.ctx.drawImage(this.imagePlayer, this.x, this.y, this.size, 115)
         break
       default:
         this.imageFront = this.imagePlayer
-        this.ctx.drawImage(this.imagePlayer, this.x, this.y, this.size, 115)
         break
     }
+    this.ctx.drawImage(this.imageFront, this.x, this.y, this.size, 115)
   }
 
   /*
