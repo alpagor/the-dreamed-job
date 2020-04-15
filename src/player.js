@@ -6,9 +6,9 @@ class Player {
 
     this.lives = lives
 
-    this.size = 100 // cuando tengo la img de mi payer actualizaré este dato
+    this.size = 100
     this.x = 1
-    this.y = canvas.height - 110
+    this.y = canvas.height - 140
     this.direction = 0 //  0 not moving  // -1 moving up   // 1 moving down
     this.speed = 5
 
@@ -79,7 +79,7 @@ class Player {
         this.imageFront = this.imagePlayer
         break
     }
-    this.ctx.drawImage(this.imageFront, this.x, this.y, this.size, 115)
+    this.ctx.drawImage(this.imageFront, this.x, this.y, this.size, 140)
   }
 
   /*

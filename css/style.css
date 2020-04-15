@@ -42,7 +42,7 @@ body {
 .canvas-container {
   background-image: url("../img/Lego_office.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 140% 100%;;
   background-position: 60% 50%;
   width: 728px;
   margin: 0 auto;

@@ -5,7 +5,7 @@ class HRteam {
     this.canvas = canvas
     this.ctx = this.canvas.getContext('2d')
 
-    this.size = 80 // actualizar con las medidas de mi HR enemies
+    this.size = 95 // actualizar con las medidas de mi HR enemies
     this.y = 0 // this.canvas.height + this.size
     this.x = x
     this.speed = speed
@@ -16,7 +16,7 @@ class HRteam {
   draw () {
     // this.ctx.fillStyle = 'blue' // quitar esto luego y substituir con la img del HR
     // this.ctx.fillRect(this.x, this.y, this.size, this.size)
-    this.ctx.drawImage(this.imageHR, this.x, this.y, this.size, 80)
+    this.ctx.drawImage(this.imageHR, this.x, this.y, this.size, 140)
   }
 
   updatePosition () {

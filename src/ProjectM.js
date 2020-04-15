@@ -17,7 +17,7 @@ class ProjectM {
     // aquí va la img del HRteam
     // this.ctx.fillStyle = 'red' // quitar esto luego y substituir con la img del HR
     // this.ctx.fillRect(this.x, this.y, this.size, this.size)
-    this.ctx.drawImage(this.imageProjectM, this.x, this.y, this.size, 110)
+    this.ctx.drawImage(this.imageProjectM, this.x, this.y, this.size, 140)
   }
 
   updatePosition () {
