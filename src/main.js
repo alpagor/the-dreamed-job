@@ -24,9 +24,9 @@ function createSplashScreen () {
       <p>INSTRUCTIONS</p>
       <section class = "instructions">
         <ul>
-        <li><button class ="btn right">&#x25B6</button> = MOVE PLAYER TO THE RIGHT</li>
-        <li><button class ="btn left">&#x25C0</button> = MOVE PLAYER TO THE LEFT</li>
-        <li><button class ="btn space-bar">space bar</button> = PLAYER STOPS</li>
+        <li><button class ="btn-right">&#x25B6</button> = MOVE PLAYER TO THE RIGHT</li>
+        <li><button class ="btn-left">&#x25C0</button> = MOVE PLAYER TO THE LEFT</li>
+        <li><button class ="btn-space-bar">space bar</button> = PLAYER STOPS</li>
         </ul>
       </section>
     </main>
@@ -69,10 +69,10 @@ function createGameOverScreen () {
   <main class="game-over-screen">
     <h1>GAME OVER!</h1>
     <div class="img-game-over">
-      <div class="text-gameOver">
-        <p id="game-over-text">HONESTLY…<br>WITH THIS KNOWLEDGE YOU<br>WOULD LIKE TO MAKE <br>A CHANGE IN YOUR CAREER PLAN…</p> 
-      </div>
-      <img id="game-over-character" src="img/Lego_web_Dev2.jpg" alt="game over it recruiter image">
+      <img src="img/Lego_web_Dev2.jpg" alt="game over it recruiter image">
+    </div>
+    <div class="img-cloud">
+      <img id="img-cloud" src="img/nube-y-texto.png" alt="cloud with text inside">
     </div>
     <div class ="btn-return-container">
       <button class="restartbtn">RESTART</button>
@@ -99,7 +99,10 @@ function removeGameOverScreen () {
 function createGameWinScreen () {
   gameWinScreen = buildDom(`
   <main class="transition-screen">
-    <h1><img src="img/Keep-Calm-Because-You-Got-The-Job-600x700.png" alt="you win"></h1>
+    <h1>YOU DID IT!!<br>YOU GOT THE JOB</h1>
+    <div class="win">
+    <img src="img/win-screen-lego-img.jpg" alt="you win">
+    </div>
     <div class ="btn-return2-container">
     <button class="restartbtn2">RESTART</button>
     <button class="homebtn2">HOME</button>

@@ -70,15 +70,6 @@ li {
   list-style-type: none;
 }
 
-.start-btn {
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  display: inline-block;
-  margin-top: 15px;
-  /*border: none;*/
-}
-
 .instructions {
   text-align: left;
 }
@@ -87,6 +78,7 @@ li {
   display: flex;
   flex-direction: row;
   margin-bottom: 5px;
+  margin-right: 5px;
 }
 
 .btn {
@@ -137,48 +129,154 @@ li {
   justify-items: center;
   align-items: center;
   align-content: center;
-  font-size: 25px;
 }
 
-#game-over-text {
+.game-over-screen h1 {
+  font-size: 500%;
   text-align: center;
-  word-spacing: normal;
-  line-height: initial;
-  position: absolute;
-  height: 50%;
-  width: 50%;
-  background-image: url("../img/cloud-white.png");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: 36% 0%;
-  padding-top: 60px;
-  padding-right: 120px;
 }
 
 .btn-return-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.img-game-over img {
   margin-bottom: 15px;
+  width: 40%;
+  margin-left: 50%;
+  margin-top: 30%;
 }
 
-.text-gameOver {
+#img-cloud {
   width: 100%;
+  margin-left: 40px;
+  margin-bottom: 200%;
 }
 
-.img-game-over {
+.transition-screen {
   display: flex;
   flex-direction: column;
+  justify-items: center;
   align-items: center;
+  align-content: center;
+  font-size: 25px;
+}
+
+.transition-screen h1 {
+  line-height: 50px;
+  text-align: center;
+}
+
+/*---BUTTONS---*/
+
+.btn-return2-container {
+  margin-top: 45px;
+}
+
+.restartbtn2 {
+  font-size: 35px;
+  border: 2px solid black;
+  background-color: yellow;
+  font-family: Legothick;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+}
+
+.restartbtn2:hover {
+  background-color: red;
+  color: yellow;
+}
+
+.homebtn2 {
+  font-size: 35px;
+  border: 2px solid black;
+  background-color: yellow;
+  font-family: Legothick;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 163px;
+}
+
+.homebtn2:hover {
+  background-color: red;
+  color: yellow;
+}
+
+.start-btn {
+  font-size: 25px;
   margin-bottom: 15px;
+  margin-top: 15px;
+  border: 2px solid black;
+  background-color: yellow;
+  font-family: Legothick;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  transition-duration: 0.4s;
 }
-/*
-#comic-cloud {
-  background-color: white;
-  width: 36%;
-  height: auto;
-  margin-left: 200px;
+
+.start-btn:hover {
+  background-color: red;
+  color: yellow;
 }
-*/
-#game-over-character {
-  width: 30%;
-  height: auto;
-  margin: 300px 0 30px 250px;
+
+.btn-right {
+  margin-right: 10px;
+}
+
+.btn-left {
+  margin-right: 10px;
+}
+
+.btn-space-bar {
+  margin-right: 10px;
+}
+
+.restartbtn {
+  font-size: 35px;
+  border: 2px solid black;
+  background-color: yellow;
+  font-family: Legothick;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+}
+
+.restartbtn:hover {
+  background-color: red;
+  color: yellow;
+}
+
+
+.homebtn {
+  font-size: 35px;
+  border: 2px solid black;
+  background-color: yellow;
+  font-family: Legothick;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  width: 163px;
+}
+
+.homebtn:hover {
+  background-color: red;
+  color: yellow;
 }

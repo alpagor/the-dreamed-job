@@ -167,3 +167,11 @@ The player that can move in 2 directions (left and right) via key related events
 ### Trello
 
 https://bit.ly/2xeOM5D
+
+### Git
+
+[Link Deploy](https://bit.ly/3abLQE7)
+
+### Slides
+
+URL for the project presentation (slides) [Link Slides](https://bit.ly/2KbTiUY)
