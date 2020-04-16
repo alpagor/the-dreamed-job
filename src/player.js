@@ -6,7 +6,7 @@ class Player {
 
     this.lives = lives
 
-    this.size = 100
+    this.size = 97
     this.x = 1
     this.y = canvas.height - 140
     this.direction = 0 //  0 not moving  // -1 moving up   // 1 moving down

@@ -5,7 +5,7 @@ class ProjectM {
     this.canvas = canvas
     this.ctx = this.canvas.getContext('2d')
 
-    this.size = 100 // actualizar con las medidas de mi HR enemies
+    this.size = 100 
     this.y = 0 // this.canvas.height + this.size
     this.x = x
     this.speed = speed
@@ -14,9 +14,6 @@ class ProjectM {
   }
 
   draw () {
-    // aquí va la img del HRteam
-    // this.ctx.fillStyle = 'red' // quitar esto luego y substituir con la img del HR
-    // this.ctx.fillRect(this.x, this.y, this.size, this.size)
     this.ctx.drawImage(this.imageProjectM, this.x, this.y, this.size, 140)
   }
 
@@ -26,13 +23,8 @@ class ProjectM {
   }
 
   isInsideScreen () {
-    const projectTop = this.y + this.size
-
-    return projectTop < this.canvas.height
-  }
-
-  isOutsideScreen () {
-    const projectTop = this.y + this.size
-    return projectTop > 0
+    if (this.y + this.size > 0 && this.x + this.size < this.canvas.width) {
+      return true
+    }
   }
 }

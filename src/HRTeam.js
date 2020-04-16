@@ -5,18 +5,16 @@ class HRteam {
     this.canvas = canvas
     this.ctx = this.canvas.getContext('2d')
 
-    this.size = 95 // actualizar con las medidas de mi HR enemies
+    this.size = 105
     this.y = 0 // this.canvas.height + this.size
     this.x = x
     this.speed = speed
     this.imageHR = new Image()
-    this.imageHR.src = 'img/hr-guy.png'
+    this.imageHR.src = 'img/HR-creepy-guy2.png'
   }
 
   draw () {
-    // this.ctx.fillStyle = 'blue' // quitar esto luego y substituir con la img del HR
-    // this.ctx.fillRect(this.x, this.y, this.size, this.size)
-    this.ctx.drawImage(this.imageHR, this.x, this.y, this.size, 140)
+    this.ctx.drawImage(this.imageHR, this.x, this.y, this.size, 135)
   }
 
   updatePosition () {
@@ -25,12 +23,8 @@ class HRteam {
   }
 
   isInsideScreen () {
-    const hrTop = this.y + this.size
-    return hrTop < this.canvas.height
-  }
-
-  isOutsideScreen () {
-    const hrTop = this.y + this.size
-    return hrTop > 0
+    if (this.y + this.size > 0 && this.x + this.size < this.canvas.width) {
+      return true
+    }
   }
 }
