@@ -40,16 +40,15 @@ The player that can move in 2 directions (left and right) via key related events
 2. main.js
 3. game.js
 4. player.js
-5. obstacle.js
-6. bonus.js
+5. HRTeam.js
+6. Projectm.js
 
 ### 1. index.html file
 
 ### 2. Main file
 
 - buildDom
-- createStartScreen / removeStartScreen
-- createGameScreen / removeGameScreen
+- createSplashScreen / removeScreen
 - createGameOverScreen / removeGameOverScreen
 - createWinScreen / removeWinScreen
 - startGame / endGame
@@ -72,18 +71,18 @@ The player that can move in 2 directions (left and right) via key related events
 
 - gameIsWon
 
-- loopCountLives
+- questions
+
+- index of questions
 
 **Methods**
 
 - start
 - startLoop
 - checkCollision
-- checkLives
-- win
+- question prompt
 - gameWon / gameOver
 - printLives
-- printTime
 
 ### 4. Player Constructor
 
@@ -93,23 +92,27 @@ The player that can move in 2 directions (left and right) via key related events
 - ctx
 - x position
 - y position
-- width
-- height
+- size
 - lives
 - image
+- sound
 - direction
 
 **Methods**
 
 - draw
 
-- move
+- setDirection
 
 - collidedWithObstacle
 
-- collidedWithScreen
+- handleScreenCollision
 
 - removeLife
+
+- updatePosition
+
+- didCollide
 
 ### 5. HRteam & ProjectM Constructor
 
@@ -119,24 +122,26 @@ The player that can move in 2 directions (left and right) via key related events
 - ctx
 - x position
 - y position
-- width
-- height
+- size
 - row
 - speed
 - direction
 - image
+- sound (for hrteam)
 
 **Methods**
 
 - draw
-- move
+- updatePosition
+- isInsideScreen
 
 ## Backlog
 
 - Bonus cv (extra life if collide a randomly ironhacker)
-- Username registration and scoreboard (to compete again other players)
+- Username registration and scoreboard (who aswer faster the questions)
 - Pause game
-- Sounds and visual effects (when collides, looses or wins)
+- Time counter
+- Random questions
 
 ## States and States Transitions
 

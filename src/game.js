@@ -4,7 +4,7 @@ class Game {
   constructor () {
     this.player = null
     this.hrTeam = []
-    this.projectM = [] // hay que verificar este valor, sino poner 1
+    this.projectM = []
     this.gameIsOver = false
     this.gameIsWon = false
     this.gameScreen = null
@@ -18,7 +18,7 @@ class Game {
     },
     {
       qa:
-        'Question 1: What does CSS stand for?<br> (a) Cascading Style Sheet (b) Complex Style Syntax (c) Complete Sound Sheet (d) Comparison Sound Sheet',
+        'getElementbyId return: (a) 1 single element (b) an HTML collection (c) a Nodelist',
       answer: 'a'
     },
     {
@@ -73,9 +73,9 @@ class Game {
     const loop = function () {
       // 1. UPDATE THE STATE OF PLAYER AND ENEMIES
       // 1.1 Create new enemies randomly (both HR and ProjectM)
-      if (Math.random() > 0.99) {
+      if (Math.random() > 0.98) {
         const randomWidthPos = (this.canvas.width - 100) * Math.random()
-        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 5)
+        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 6)
 
         this.hrTeam.push(newHrTeam)
       } ;
@@ -215,13 +215,6 @@ class Game {
       }
     }
   }
-  /*
-    if (question.toLowerCase() === 'b') {
-      console.log('you got the job!')
-      return this.gameWin()
-    } else {
-      return this.gameOver()
-    } */
 
   updateGameStats () {
     this.livesElement.innerHTML = this.player.lives

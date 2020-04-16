@@ -70,7 +70,7 @@ function removeScreen () {
 function createGameOverScreen () {
   gameOverScreen = buildDom(`
   <main class="game-over-screen">
-    <audio src="audio/Believe-It-Or-Not.mp3" controls autoplay type="audio/mp3"></audio>
+    <audio src="audio/Loser-song.mp3" controls autoplay type="audio/mp3"></audio>
     <h1>GAME OVER!</h1>
     <div class="img-game-over">
       <img src="img/woman-text.png" alt="game over it recruiter image">
