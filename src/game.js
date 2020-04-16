@@ -77,19 +77,17 @@ class Game {
     const loop = function () {
       // 1. UPDATE THE STATE OF PLAYER AND ENEMIES
       // 1.1 Create new enemies randomly (both HR and ProjectM)
-      if (Math.random() > 0.98) {
-        const randomWidthPos = (this.canvas.width - 20) * Math.random()
-        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 6)
+      if (Math.random() > 0.99) {
+        const randomWidthPos = (this.canvas.width - 100) * Math.random()
+        const newHrTeam = new HRteam(this.canvas, randomWidthPos, 5)
 
         this.hrTeam.push(newHrTeam)
-        console.log(newHrTeam)
       } ;
-      if (Math.random() > 0.98) {
-        const randomWidthPos = (this.canvas.width - 20) * Math.random()
+      if (Math.random() > 0.985) {
+        const randomWidthPos = (this.canvas.width - 105) * Math.random()
         const newProjectM = new ProjectM(this.canvas, randomWidthPos, 2)
 
         if (this.projectM.length < 1) {
-          console.log(randomWidthPos)
           this.projectM.push(newProjectM) // en caso sea 1 no push cuando salga de la pantalla lo vuelve a poner
         }
       }
@@ -115,7 +113,7 @@ class Game {
       const projectmOnScreen = this.projectM.filter(function (projectm) {
         projectm.updatePosition()
         const isInsideScreen = projectm.isInsideScreen()
-
+        console.log(isInsideScreen)
         return isInsideScreen // true false
       })
 

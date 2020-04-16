@@ -23,7 +23,7 @@ class ProjectM {
   }
 
   isInsideScreen () {
-    if (this.y + this.size > 0 && this.x + this.size < this.canvas.width) {
+    if (this.y + this.size < this.canvas.height) {
       return true
     } else {
       return false
