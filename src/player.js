@@ -19,11 +19,11 @@ class Player {
     this.screenRight = this.canvas.width // - this.size
 
     this.imagePlayer = new Image()
-    this.imagePlayer.src = '../img/player.png'
+    this.imagePlayer.src = 'img/player.png'
     this.imagePlayerR = new Image()
-    this.imagePlayerR.src = '../img/player-right.png'
+    this.imagePlayerR.src = 'img/player-right.png'
     this.imagePlayerL = new Image()
-    this.imagePlayerL.src = '../img/player-left-2.png'
+    this.imagePlayerL.src = 'img/player-left-2.png'
     this.imageFront = this.imagePlayer
   }
 

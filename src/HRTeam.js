@@ -10,7 +10,7 @@ class HRteam {
     this.x = x
     this.speed = speed
     this.imageHR = new Image()
-    this.imageHR.src = '../img/hr-guy.png'
+    this.imageHR.src = 'img/hr-guy.png'
   }
 
   draw () {

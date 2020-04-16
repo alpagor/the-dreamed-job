@@ -69,10 +69,7 @@ function createGameOverScreen () {
   <main class="game-over-screen">
     <h1>GAME OVER!</h1>
     <div class="img-game-over">
-      <img src="img/Lego_web_Dev2.jpg" alt="game over it recruiter image">
-    </div>
-    <div class="img-cloud">
-      <img id="img-cloud" src="img/nube-y-texto.png" alt="cloud with text inside">
+      <img src="img/woman-text.png" alt="game over it recruiter image">
     </div>
     <div class ="btn-return-container">
       <button class="restartbtn">RESTART</button>

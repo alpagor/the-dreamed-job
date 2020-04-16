@@ -10,7 +10,7 @@ class ProjectM {
     this.x = x
     this.speed = speed
     this.imageProjectM = new Image()
-    this.imageProjectM.src = '../img/project-manager.png'
+    this.imageProjectM.src = 'img/project-manager.png'
   }
 
   draw () {

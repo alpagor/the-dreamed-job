@@ -42,7 +42,7 @@ body {
 .canvas-container {
   background-image: url("../img/Lego_office.jpg");
   background-repeat: no-repeat;
-  background-size: 140% 100%;;
+  background-size: 140% 100%;
   background-position: 60% 50%;
   width: 728px;
   margin: 0 auto;
@@ -123,17 +123,21 @@ li {
   opacity: 1;
 }
 
+/*------SCREENS----------*/
+
 .game-over-screen {
   display: flex;
   flex-direction: column;
-  justify-items: center;
+  /* justify-items: center;*/
   align-items: center;
   align-content: center;
 }
 
+
 .game-over-screen h1 {
   font-size: 500%;
   text-align: center;
+  margin-bottom: -70px;
 }
 
 .btn-return-container {
@@ -141,17 +145,31 @@ li {
   text-align: center;
 }
 
-.img-game-over img {
-  margin-bottom: 15px;
-  width: 40%;
-  margin-left: 50%;
-  margin-top: 30%;
+.img-game-over {
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
 
-#img-cloud {
-  width: 100%;
-  margin-left: 40px;
-  margin-bottom: 200%;
+.img-game-over img {
+  height: auto;
+  margin: 200px auto 100px;
+  width: 500px !important;
+}
+
+.img-cloud {
+  width: fit-content;
+  margin-left: 500px;
+  margin-top: -150px;
+  padding-bottom: 200px;
+}
+
+.bind-imgs {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
 }
 
 .transition-screen {
@@ -172,6 +190,7 @@ li {
 
 .btn-return2-container {
   margin-top: 45px;
+  margin-bottom: 5px;
 }
 
 .restartbtn2 {
@@ -260,7 +279,6 @@ li {
   background-color: red;
   color: yellow;
 }
-
 
 .homebtn {
   font-size: 35px;
