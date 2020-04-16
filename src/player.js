@@ -25,6 +25,8 @@ class Player {
     this.imagePlayerL = new Image()
     this.imagePlayerL.src = 'img/player-left-2.png'
     this.imageFront = this.imagePlayer
+
+    this.soundHr = new Audio('audio/Doh.mp3')
   }
 
   setDirection (direction) {
@@ -59,6 +61,9 @@ class Player {
 
   removeLife () {
     this.lives -= 1
+    this.soundHr.play()
+
+    this.soundHr.volume = 0.1
   }
 
   draw () {

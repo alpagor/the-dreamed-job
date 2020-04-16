@@ -5,7 +5,7 @@ class ProjectM {
     this.canvas = canvas
     this.ctx = this.canvas.getContext('2d')
 
-    this.size = 100 
+    this.size = 100
     this.y = 0 // this.canvas.height + this.size
     this.x = x
     this.speed = speed
@@ -25,6 +25,8 @@ class ProjectM {
   isInsideScreen () {
     if (this.y + this.size > 0 && this.x + this.size < this.canvas.width) {
       return true
+    } else {
+      return false
     }
   }
 }

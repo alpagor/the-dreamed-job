@@ -44,6 +44,7 @@ function createSplashScreen () {
 function createGameScreen () {
   gameScreen = buildDom(`
     <main class="game container">
+    <audio src="audio/Van Halen-Jump.mp3" controls autoplay type="audio/mp3"></audio>
     <header>
       <div class="lives">
         <span class="label">CV'S:</span>
@@ -55,6 +56,8 @@ function createGameScreen () {
     </div>
   </main>
   `)
+  const soundMenu = gameScreen.querySelector('audio')
+  soundMenu.volume = 0.1
 
   document.body.appendChild(gameScreen)
 }
@@ -67,6 +70,7 @@ function removeScreen () {
 function createGameOverScreen () {
   gameOverScreen = buildDom(`
   <main class="game-over-screen">
+  <audio src="audio/Believe-It-Or-Not.mp3" controls autoplay type="audio/mp3"></audio>
     <h1>GAME OVER!</h1>
     <div class="img-game-over">
       <img src="img/woman-text.png" alt="game over it recruiter image">
@@ -77,6 +81,9 @@ function createGameOverScreen () {
     </div>
   </main>
   `)
+
+  const soundMenu = gameOverScreen.querySelector('audio')
+  soundMenu.volume = 0.1
 
   var restartButton = gameOverScreen.querySelector('.restartbtn')
   restartButton.addEventListener('click', startGame)
@@ -96,6 +103,7 @@ function removeGameOverScreen () {
 function createGameWinScreen () {
   gameWinScreen = buildDom(`
   <main class="transition-screen">
+  <audio src="audio/Everything-Is-AWESOME.mp3" controls autoplay type="audio/mp3"></audio>
     <h1>YOU DID IT!!<br>YOU GOT THE JOB</h1>
     <div class="win">
     <img src="img/win-screen-lego-img.jpg" alt="you win">
@@ -106,6 +114,9 @@ function createGameWinScreen () {
     </div>
   </main>
   `)
+
+  const soundMenu = gameWinScreen.querySelector('audio')
+  soundMenu.volume = 0.1
 
   var restartButton = gameWinScreen.querySelector('.restartbtn2')
   restartButton.addEventListener('click', startGame)

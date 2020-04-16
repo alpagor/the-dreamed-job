@@ -84,7 +84,7 @@ class Game {
         this.hrTeam.push(newHrTeam)
         console.log(newHrTeam)
       } ;
-      if (Math.random() > 0.99) {
+      if (Math.random() > 0.98) {
         const randomWidthPos = (this.canvas.width - 20) * Math.random()
         const newProjectM = new ProjectM(this.canvas, randomWidthPos, 2)
 
@@ -92,8 +92,6 @@ class Game {
           console.log(randomWidthPos)
           this.projectM.push(newProjectM) // en caso sea 1 no push cuando salga de la pantalla lo vuelve a poner
         }
-
-        // console.log(newProjectM)
       }
 
       // 1.2. Check if player had hit any enemy
@@ -158,7 +156,6 @@ class Game {
     this.hrTeam.forEach(function (hr) {
       if (this.player.didCollide(hr)) {
         this.player.removeLife()
-        console.log('Player lives', this.player.lives)
 
         // Move the enemy of the screen, to the bottom
         hr.y = 0 - hr.size
