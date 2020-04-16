@@ -6,7 +6,7 @@ class ProjectM {
     this.ctx = this.canvas.getContext('2d')
 
     this.size = 100
-    this.y = 0 // this.canvas.height + this.size
+    this.y = 0
     this.x = x
     this.speed = speed
     this.imageProjectM = new Image()
@@ -18,7 +18,6 @@ class ProjectM {
   }
 
   updatePosition () {
-    // y axis porque en mi caso se mueven de arriba a bajo por lo que sumamos en lugar de restar
     this.y = this.y + this.speed
   }
 

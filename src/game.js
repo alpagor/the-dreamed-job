@@ -13,23 +13,19 @@ class Game {
     this.nextIndex = 0 // variable the holds number for the index of the questions array
     this.questions = [{ // array of all questions
       qa:
-        'Question 1: What does HTML stand for?<br>(a) Hyper type marked language<br> (b) Hyper text markup language<br> (c) Hyped terrain mock language<br> (d) Hyper typeface main loop',
+        'CSS Margin-top and margin-bottom do not have an effect on an inline element. (a) True (b) False',
       answer: 'b'
     },
     {
       qa:
-        'Question 1: What does CSS stand for?<br> (a) Cascading Style Sheet<br> (b) Complex Style Syntax<br> (c) Complete Sound Sheet<br> (d) Comparison Sound Sheet',
+        'Question 1: What does CSS stand for?<br> (a) Cascading Style Sheet (b) Complex Style Syntax (c) Complete Sound Sheet (d) Comparison Sound Sheet',
       answer: 'a'
     },
     {
       qa:
-        'Question 2: JavaScript variables can only hold string data.<br> (a) True<br> (b) False',
+        'Which is not an array method? (a) .map (b) .get (c) .filter (d) .reduce',
       answer: 'b'
     }]
-
-    //  // tcreated a variable to equal to the answer of teh question inside the questions array of whichever Index the game is on
-    // crear propiedades de img y audio del juego, como poner audio?
-    // aquí va la propiedad de preguntas del projectM?
   }
 
   // instantiate the player, set the canvas ,and start the canvas loop
@@ -49,7 +45,7 @@ class Game {
     this.canvas.width = this.containerWidth
     this.canvas.height = this.containerHeight
 
-    this.player = new Player(this.canvas, 500)
+    this.player = new Player(this.canvas, 4)
 
     // Event listener for moving the player
     function handleKeyDown (event) {

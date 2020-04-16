@@ -24,9 +24,9 @@ function createSplashScreen () {
       <p>INSTRUCTIONS</p>
       <section class = "instructions">
         <ul>
-        <li><button class ="btn-right">&#x25B6</button> = MOVE PLAYER TO THE RIGHT</li>
-        <li><button class ="btn-left">&#x25C0</button> = MOVE PLAYER TO THE LEFT</li>
-        <li><button class ="btn-space-bar">space bar</button> = PLAYER STOPS</li>
+          <li><button class ="btn-right">&#x25B6</button> = MOVE PLAYER TO THE RIGHT</li>
+          <li><button class ="btn-left">&#x25C0</button> = MOVE PLAYER TO THE LEFT</li>
+          <li><button class ="btn-space-bar">space bar</button> = PLAYER STOPS</li>
         </ul>
       </section>
     </main>
@@ -70,7 +70,7 @@ function removeScreen () {
 function createGameOverScreen () {
   gameOverScreen = buildDom(`
   <main class="game-over-screen">
-  <audio src="audio/Believe-It-Or-Not.mp3" controls autoplay type="audio/mp3"></audio>
+    <audio src="audio/Believe-It-Or-Not.mp3" controls autoplay type="audio/mp3"></audio>
     <h1>GAME OVER!</h1>
     <div class="img-game-over">
       <img src="img/woman-text.png" alt="game over it recruiter image">
@@ -103,14 +103,14 @@ function removeGameOverScreen () {
 function createGameWinScreen () {
   gameWinScreen = buildDom(`
   <main class="transition-screen">
-  <audio src="audio/Everything-Is-AWESOME.mp3" controls autoplay type="audio/mp3"></audio>
+    <audio src="audio/Everything-Is-AWESOME.mp3" controls autoplay type="audio/mp3"></audio>
     <h1>YOU DID IT!!<br>YOU GOT THE JOB</h1>
     <div class="win">
-    <img src="img/win-screen-lego-img.jpg" alt="you win">
+      <img src="img/win-screen-lego-img.jpg" alt="you win">
     </div>
     <div class ="btn-return2-container">
-    <button class="restartbtn2">RESTART</button>
-    <button class="homebtn2">HOME</button>
+      <button class="restartbtn2">RESTART</button>
+      <button class="homebtn2">HOME</button>
     </div>
   </main>
   `)
